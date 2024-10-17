@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction App</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="pregnancies">Pregnancies:</label>
+                <input type="number" id="pregnancies" name="pregnancies" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="glucose">Glucose Level:</label>
+                <input type="number" id="glucose" name="glucose" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bloodpressure">Blood Pressure:</label>
+                <input type="number" id="bloodpressure" name="bloodpressure" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="skinthickness">Skin Thickness:</label>
+                <input type="number" id="skinthickness" name="skinthickness" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="insulin">Insulin:</label>
+                <input type="number" id="insulin" name="insulin" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bmi">BMI:</label>
+                <input type="number" id="bmi" name="bmi" step="0.1" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="diabetespedigreefunction">Diabetes Pedigree Function:</label>
+                <input type="number" id="diabetespedigreefunction" name="diabetespedigreefunction" step="0.01" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="0" required>
+            </div>
+
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        <div class="result">
+            {% if prediction %}
+                <h2>Prediction: {{ prediction }}</h2>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+
+
